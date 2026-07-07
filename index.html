@@ -288,6 +288,10 @@
                 answer: "噪音是一種複雜能量，因為環境/材質/位置/測試方式/頻率共鳴等等多樣條件不同，也因此，無法精確計算或是模擬，只能實測才有精確值。\n但有時系統開發初期確需要初步估計，沒有辦法中的辦法中，有個理想化簡易計算工具總比胡亂猜的好，以下是工具連結，如果使用上有問題，請詢問Thermal。\n<a href='https://advantechrandy.github.io/Tool-A013_V2.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>初步Sound Pressure噪音計算Tool</a>"
             },
             {
+                keywords: ["噪音", "估算"],
+                answer: "噪音是一種複雜能量，因為環境/材質/位置/測試方式/頻率共鳴等等多樣條件不同，也因此，無法精確計算或是模擬，只能實測才有精確值。\n但有時系統開發初期確需要初步估計，沒有辦法中的辦法中，有個理想化簡易計算工具總比胡亂猜的好，以下是工具連結，如果使用上有問題，請詢問Thermal。\n<a href='https://advantechrandy.github.io/Tool-A013_V2.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>初步Sound Pressure噪音計算Tool</a>"
+            },
+            {
                 keywords: ["噪音", "評估"],
                 answer: "噪音是一種複雜能量，因為環境/材質/位置/測試方式/頻率共鳴等等多樣條件不同，也因此，無法精確計算或是模擬，只能實測才有精確值。\n但有時系統開發初期確需要初步估計，沒有辦法中的辦法中，有個理想化簡易計算工具總比胡亂猜的好，以下是工具連結，如果使用上有問題，請詢問Thermal。\n<a href='https://advantechrandy.github.io/Tool-A013_V2.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>初步Sound Pressure噪音計算Tool</a>"
             },
@@ -568,7 +572,11 @@
                 answer: "這問題是EE弟兄的問題，但我可以大略簡介一下。\n如果是power零件，廢熱(消耗瓦特數) = 輸入瓦特數-輸出瓦特數。\n如果是一般零件，那麼EE通常是直接用datasheet上面的peak數值計算，但通常會超過實際狀況，變成over design，如果buffer要多抓一點，這也是可以。\n如果要比較準確的零件廢熱，通常要用量測方式，最省事方法是請廠商提供實測瓦特數。"
             },
             {
-                keywords: ["廢熱", "怎麼"],
+                keywords: ["廢熱", "估算"],
+                answer: "這問題是EE弟兄的問題，但我可以大略簡介一下。\n如果是power零件，廢熱(消耗瓦特數) = 輸入瓦特數-輸出瓦特數。\n如果是一般零件，那麼EE通常是直接用datasheet上面的peak數值計算，但通常會超過實際狀況，變成over design，如果buffer要多抓一點，這也是可以。\n如果要比較準確的零件廢熱，通常要用量測方式，最省事方法是請廠商提供實測瓦特數。"
+            },
+            {
+                keywords: ["廢熱", "評估"],
                 answer: "這問題是EE弟兄的問題，但我可以大略簡介一下。\n如果是power零件，廢熱(消耗瓦特數) = 輸入瓦特數-輸出瓦特數。\n如果是一般零件，那麼EE通常是直接用datasheet上面的peak數值計算，但通常會超過實際狀況，變成over design，如果buffer要多抓一點，這也是可以。\n如果要比較準確的零件廢熱，通常要用量測方式，最省事方法是請廠商提供實測瓦特數。"
             },
             {
@@ -681,6 +689,14 @@
             },
             {
                 keywords: ["零件", "shutdown"],
+                answer: "零件硬體設定裡，有些會有shutdown溫度點設定，尤其是CPU/GPU。\n到達這溫度點時，零件電源會馬上關掉。"
+            },
+            {
+                keywords: ["CPU", "shut down"],
+                answer: "零件硬體設定裡，有些會有shutdown溫度點設定，尤其是CPU/GPU。\n到達這溫度點時，零件電源會馬上關掉。"
+            },
+            {
+                keywords: ["零件", "shut down"],
                 answer: "零件硬體設定裡，有些會有shutdown溫度點設定，尤其是CPU/GPU。\n到達這溫度點時，零件電源會馬上關掉。"
             },
             {
@@ -816,7 +832,11 @@
                 answer: "Thermal simulation需要3~4個工作天，看系統複雜度及當下工作狀況。"
             },
             {
-                keywords: ["thermal","工作"],
+                keywords: ["thermal","工作","說明"],
+                answer: "Thermal工作簡易說明如下。\n1.RFQ初期thermal solution規畫報價及風險評估。\n2.RFQ Thermal simulaiton評估。\n3.EVT thermal profile pre-test。\n4.DVT noise test(如果有需要)。\n5.後續PVT/MP相關thermal問題解決。"
+            },
+            {
+                keywords: ["thermal","工作","敘述"],
                 answer: "Thermal工作簡易說明如下。\n1.RFQ初期thermal solution規畫報價及風險評估。\n2.RFQ Thermal simulaiton評估。\n3.EVT thermal profile pre-test。\n4.DVT noise test(如果有需要)。\n5.後續PVT/MP相關thermal問題解決。"
             },
             {
@@ -1000,19 +1020,19 @@
                 answer: "有點像平板型熱管，熱傳導係數約為銅的十倍。\n說明與影片:<a href='https://advantechrandy.github.io/Data-B004_V2.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>VC說明與影片</a>"
             },
             {
-                keywords: ["mos","廢熱"],
+                keywords: ["mos","廢熱","計算"],
                 answer: "依照文獻資料即power公式，可已經由tool初步計算，目前數值準確度約為3%以內，High side MOS會比較準確。\n相關問題請洽詢對應Power。\nMOS廢熱計算tool連結:<a href='https://advantechrandy.github.io/Tool-A035_V7.4/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>MOS廢熱計算Tool</a>"
             },
             {
-                keywords: ["mos","loss"],
+                keywords: ["mos","loss","估算"],
                 answer: "依照文獻資料即power公式，可已經由tool初步計算，目前數值準確度約為3%以內，High side MOS會比較準確。\nMOS廢熱計算tool連結:<a href='https://advantechrandy.github.io/Tool-A035_V7.4/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>MOS廢熱計算Tool</a>"
             },
             {
-                keywords: ["choke","廢熱"],
+                keywords: ["choke","廢熱","計算"],
                 answer: "choke/transformer廢熱計算中，銅損有相關資料可以製作tool，但鐵損為廠商機密資料，各家參數資料不同。\n也因此只能用廠商提供的tool計算，可以洽詢對應的Power。"
             },
             {
-                keywords: ["choke","loss"],
+                keywords: ["choke","loss","估算"],
                 answer: "choke/transformer廢熱計算中，銅損有相關資料可以製作tool，但鐵損為廠商機密資料，各家參數資料不同。\n也因此只能用廠商提供的tool計算，可以洽詢對應的Power。"
             },
             {
@@ -1020,19 +1040,43 @@
                 answer: "一般環境溫度40度的fanless系統，CPU最高約到15W，這跟系統內結構/邊界條件/開孔條件/heat sink效率相關，會需要上下預估修正。"
             },
             {
-                keywords: ["fanless","cpu pad"],
+                keywords: ["fanless","cpu power"],
+                answer: "一般環境溫度40度的fanless系統，CPU最高約到15W，這跟系統內結構/邊界條件/開孔條件/heat sink效率相關，會需要上下預估修正。"
+            },
+            {
+                keywords: ["fanless","cpu", "pad","選"],
                 answer: "研華常用CPU pad為翰興的PG80A，黏土材質，顏色為深粉紅色。"
             },
             {
-                keywords: ["cooler","grease"],
+                keywords: ["fanless","cpu", "pad","挑"],
+                answer: "研華常用CPU pad為翰興的PG80A，黏土材質，顏色為深粉紅色。"
+            },
+            {
+                keywords: ["fanless","cpu", "pad","建"],
+                answer: "研華常用CPU pad為翰興的PG80A，黏土材質，顏色為深粉紅色。"
+            },
+            {
+                keywords: ["cooler","grease","挑"],
                 answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
             },
             {
-                keywords: ["cooler","導 ঠান্ড膏"], // Note: Found a typo in user base ("導 ঠান্ড膏" maybe supposed to be "導熱膏", kept intact)
+                keywords: ["cooler","grease","選"],
                 answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
             },
             {
-                keywords: ["建議","導熱膏"],
+                keywords: ["cooler","grease","建"],
+                answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
+            },
+            {
+                keywords: ["cooler","導熱膏","挑"], 
+                answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
+            },
+            {
+                keywords: ["cooler","導熱膏","選"], 
+                answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
+            },
+            {
+                keywords: ["cooler","導熱膏","建"], 
                 answer: "研華常用cooler grease為PTM7950，有膏狀SKU與相變化pad SKU，顏色為灰色。"
             },
             {
@@ -1044,28 +1088,63 @@
                 answer: "相變化pad在溫度45~50度時會融化為導熱膏，回常溫後回復為pad，常用在CPU上面。"
             },
             {
+                keywords: ["相變化pad","說明"],
+                answer: "相變化pad在溫度45~50度時會融化為導熱膏，回常溫後回復為pad，常用在CPU上面。"
+            },
+            {
                 keywords: ["熱管裡面","什麼"],
+                answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
+            },
+            {
+                keywords: ["熱管裡面","說明"],
                 answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
             },
             {
                 keywords: ["熱管裡面","結構"],
                 answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
             },
-            
             {
-                keywords: ["thermal pad","導熱膏"],
+                keywords: ["熱管內部","什麼"],
+                answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
+            },
+            {
+                keywords: ["熱管內部","說明"],
+                answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
+            },
+            {
+                keywords: ["熱管內部","結構"],
+                answer: "熱管裡面是中空+毛細結構，灌入一部份水，抽真空，讓水的沸點降低。\n發熱端讓水變蒸氣，蒸氣到冷凝端凝結成水再流回發熱端。"
+            },
+            {
+                keywords: ["thermal pad","導熱膏","比較"],
                 answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
             },
             {
-                keywords: ["thermal pad","grease"],
+                keywords: ["thermal pad","grease","比較"],
                 answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
             },
             {
-                keywords: ["散熱片","導熱膏"],
+                keywords: ["散熱片","導熱膏","比較"],
                 answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
             },
             {
-                keywords: ["濾網","影響"],
+                keywords: ["thermal pad","導熱膏","差異"],
+                answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
+            },
+            {
+                keywords: ["thermal pad","grease","差異"],
+                answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
+            },
+            {
+                keywords: ["散熱片","導熱膏","差異"],
+                answer: "相同導熱係數條件下，導熱膏的熱阻會比較低，因為gap比較小，導熱膏的gap會小於0.1mm，大瓦特數零件或是高環境溫度系統，會建議用導熱膏。"
+            },
+            {
+                keywords: ["濾網","影響","溫度"],
+                answer: "進出風口加裝濾網，會增加風流阻抗，不管是自然對流或是強制對流，整體thermal效能下降，系統溫度上升。"
+            },
+             {
+                keywords: ["濾網","影響","熱"],
                 answer: "進出風口加裝濾網，會增加風流阻抗，不管是自然對流或是強制對流，整體thermal效能下降，系統溫度上升。"
             },
             {
@@ -1077,7 +1156,15 @@
                 answer: "目前QA對應窗口為Howard.Lai，分機為9010。\n他負責ACG專案reliability test以及外測窗口聯絡。"
             },
             {
+                keywords: ["qa","contact"],
+                answer: "目前QA對應窗口為Howard.Lai，分機為9010。\n他負責ACG專案reliability test以及外測窗口聯絡。"
+            },
+            {
                 keywords: ["ip","說明"],
+                answer: "IP為防塵防水等級，第一個數字是防塵等級，第二個數字是防水等級。"
+            },
+            {
+                keywords: ["ip","解釋"],
                 answer: "IP為防塵防水等級，第一個數字是防塵等級，第二個數字是防水等級。"
             },
             {
@@ -1089,19 +1176,27 @@
                 answer: "Thermal gel是一種導熱材料，有點像牙膏，主要用在同時接觸多零件的heat sink上，避免每個零件導熱材料壓力不同，讓heat sink歪斜導致散熱效果變差。"
             },
             {
-                keywords: ["燙傷","金屬"],
+                keywords: ["thermal gel","說明"],
+                answer: "Thermal gel是一種導熱材料，有點像牙膏，主要用在同時接觸多零件的heat sink上，避免每個零件導熱材料壓力不同，讓heat sink歪斜導致散熱效果變差。"
+            },
+            {
+                keywords: ["thermal gel","解釋"],
+                answer: "Thermal gel是一種導熱材料，有點像牙膏，主要用在同時接觸多零件的heat sink上，避免每個零件導熱材料壓力不同，讓heat sink歪斜導致散熱效果變差。"
+            },
+            {
+                keywords: ["燙傷","金屬","溫度"],
                 answer: "1.如果金屬面60度，接觸10秒會嚴重燙傷。\n2.如果金屬面66度，接觸1秒就會嚴重燙傷。"
             },
             {
-                keywords: ["燙傷","塑膠"],
+                keywords: ["燙傷","塑膠","溫度"],
                 answer: "1.如果金屬面60度，接觸一分鐘會嚴重燙傷。\n2.如果金屬面66度，接觸10秒就會嚴重燙傷。"
             },
             {
-                keywords: ["風扇轉速","阻力"],
+                keywords: ["風扇","轉速","阻力"],
                 answer: "這是一般常見的現象。\n如果風扇轉動時遇到阻力，扇葉附近空氣密度會下降，有點像慢慢開始空轉的感覺，而同duty下風扇瓦特數固定，所以轉速會拉高。"
             },
             {
-                keywords: ["風扇轉速","風阻"],
+                keywords: ["風扇","轉速","風阻"],
                 answer: "這是一般常見的現象。\n如果風扇轉動時遇到阻力，扇葉附近空氣密度會下降，有點像慢慢開始空轉的感覺，而同duty下風扇瓦特數固定，所以轉速會拉高。"
             },
             {
