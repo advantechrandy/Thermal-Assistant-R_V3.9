@@ -191,9 +191,9 @@
         <div id="chatBox" class="chat-box flex-grow p-4 space-y-4 flex flex-col">
             <div class="flex flex-col gap-1 w-full">
                 <span class="text-[13px] text-gray-200 ml-1">小R</span>
-                <div class="msg-bubble msg-ai">YO~ 我是Thermal助理小R，我可以回答一些常用性Thermal問題。
-如果是專案複雜評估計算，請幫忙找Thermal喔。
-請輸入你的問題(盡量用中文)，系統會自動彙整沒被回覆的問題給管理員，將定期更新資料庫，進版會通知喔。</div>
+                <div class="msg-bubble msg-ai">YO~ 我是Thermal助理小R，我可以對話回答常用性Thermal問題。
+如果是複雜評估計算，請直接找Thermal喔。
+請輸入你的問題(盡量用中文)，系統會自動傳送沒被回覆的問題給藍迪彙整更新。</div>
             </div>
         </div>
 
@@ -271,6 +271,426 @@
         updateClock();
 
         const knowledgeBase = [
+            {
+                keywords: ["noise","測試規範有哪些"],
+                answer: "Noise test規範主要有三種。\n1.sound pressure test，研華最常用的測試規範，因為風扇datasheet上面只有sound pressure數據，才有辦法初步評估。\n2.sound power。\n3.sound quality。"
+            },
+            {
+                keywords: ["噪音","測試規範有哪些"],
+                answer: "Noise test規範主要有三種。\n1.sound pressure test，研華最常用的測試規範，因為風扇datasheet上面只有sound pressure數據，才有辦法初步評估。\n2.sound power。\n3.sound quality。"
+            },
+            {
+                keywords: ["heat sink","零件","gap","用","多厚","thermal pad"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["heatsink","零件","gap","用","多厚","thermal pad"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["heat sink","零件","gap","用","多厚","導熱片"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["heatsink","零件","gap","用","多厚","導熱片"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["heat sink","零件","gap","用","多厚","散熱片"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["heatsink","零件","gap","用","多厚","散熱片"],
+                answer: "Thermal pad初步設計的壓縮比約30%。\n如果thermal pad 1mm厚度，那麼建議gap= 1*0.7= 0.7mm \n如果gap是1mm, 那麼thermal pad建議厚度= 1/0.7 =1.43mm，但themral pad有固定公規厚度，需要找近似厚度。"
+            },
+            {
+                keywords: ["thermal pad","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["散熱片","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["導熱片","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["石墨片","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["導熱膏","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["heat sink","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["heatsink","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["風扇","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["fan","採購","是誰"],
+                answer: "目前thermal料的研華採購是Stanley21，有報價或廠商相關問題，可以跟他洽詢。"
+            },
+            {
+                keywords: ["風扇","顆","多少錢"],
+                answer: "這問題變數比較多，譬如大小厚度/性能/廠商品牌/廠商跟研華採購狀況等等，建議請thermal查詢一下既有KCC料有沒有對應資料。"
+            },
+            {
+                keywords: ["fan","顆","多少錢"],
+                answer: "這問題變數比較多，譬如大小厚度/性能/廠商品牌/廠商跟研華採購狀況等等，建議請thermal查詢一下既有KCC料有沒有對應資料。"
+            },
+            {
+                keywords: ["cooler","顆","多少錢"],
+                answer: "這問題變數比較多，譬如大小/結構複雜性/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，會比較有參考價值。。"
+            },
+            {
+                keywords: ["heat sink","顆","多少錢"],
+                answer: "這問題變數比較多，譬如大小/結構複雜性/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，會比較有參考價值。。"
+            },
+            {
+                keywords: ["heatsink","顆","多少錢"],
+                answer: "這問題變數比較多，譬如大小/結構複雜性/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，會比較有參考價值。。"
+            },
+            {
+                keywords: ["鋁擠","開模費","多少"],
+                answer: "鋁擠的特性是開模費比較低，單價比較高一點。\n這問題變數比較多，譬如大小/結構複雜性/金屬材的價格波動/廠商目前產能配置/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，比較有參考價值。"
+            },
+            {
+                keywords: ["壓鑄","開模費","多少"],
+                answer: "鋁壓鑄的特性是開模費比較高，單價比較低點。\n這問題變數比較多，譬如大小/結構複雜性/金屬材的價格波動/廠商目前產能配置/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，比較有參考價值。"
+            },
+            {
+                keywords: ["heat sink","開模費","多少"],
+                answer: "鋁壓鑄的特性是開模費比較高，單價比較低點。鋁擠的特性是開模費比較低，單價比較高一點。\n這問題變數比較多，譬如大小/結構複雜性/金屬材的價格波動/廠商目前產能配置/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，比較有參考價值。"
+            },
+            {
+                keywords: ["heatsink","開模費","多少"],
+                answer: "鋁壓鑄的特性是開模費比較高，單價比較低點。鋁擠的特性是開模費比較低，單價比較高一點。\n這問題變數比較多，譬如大小/結構複雜性/金屬材的價格波動/廠商目前產能配置/廠商跟研華採購狀況等等，建議請thermal查詢一下是否有近期比較接近的方案報價，比較有參考價值。"
+            },
+            {
+                keywords: ["壓鑄","鋁擠","哪個","比較好"],
+                answer: "鋁擠材料的導熱係數約是壓鑄材料的兩倍，鋁擠散熱比較好。"
+            },
+            {
+                keywords: ["客戶","可以自己","換thermal pad"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+            {
+                keywords: ["客戶","可以自行","換thermal pad"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+            {
+                keywords: ["客戶","可以自己","換導熱片"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+            {
+                keywords: ["客戶","可以自行","換導熱片"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+             {
+                keywords: ["客戶","可以自己","換散熱片"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+            {
+                keywords: ["客戶","可以自行","換散熱片"],
+                answer: "如果客戶需要自己更換themral pad，請記得提醒幾點。\n1.Thermal pad有兩面膠膜，需要確定有撕起來 \n2.原來thermal pad需要清除，且零件表面要盡量清乾淨"
+            },
+            {
+                keywords: ["客戶","可以自己","換heat sink"],
+                answer: "如果客戶需要自己更換heat sink，請記得提醒幾點。\n1.Heat sink如果有使用過，thermal pad需要更新 \n2.Heat sink的螺絲需要確認是否有鎖好"
+            },
+            {
+                keywords: ["客戶","可以自己","換heatsink"],
+                answer: "如果客戶需要自己更換heat sink，請記得提醒幾點。\n1.Heat sink如果有使用過，thermal pad需要更新 \n2.Heat sink的螺絲需要確認是否有鎖好"
+            },
+            {
+                keywords: ["客戶","可以自行","換heat sink"],
+                answer: "如果客戶需要自己更換heat sink，請記得提醒幾點。\n1.Heat sink如果有使用過，thermal pad需要更新 \n2.Heat sink的螺絲需要確認是否有鎖好"
+            },
+            {
+                keywords: ["客戶","可以自行","換heatsink"],
+                answer: "如果客戶需要自己更換heat sink，請記得提醒幾點。\n1.Heat sink如果有使用過，thermal pad需要更新 \n2.Heat sink的螺絲需要確認是否有鎖好"
+            },
+            {
+                keywords: ["客戶","可以自己","換cooler"],
+                answer: "如果客戶需要自己更換cooler，請記得提醒幾點。\n1.Cooler如果有使用過，cooler的導熱膏需要更新 \n2.Cooelr的彈簧螺絲需要確認是否有鎖好 \n3.Cooler fan connector確認有插好"
+            },
+            {
+                keywords: ["客戶","可以自行","換cooler"],
+                answer: "如果客戶需要自己更換cooler，請記得提醒幾點。\n1.Cooler如果有使用過，cooler的導熱膏需要更新 \n2.Cooelr的彈簧螺絲需要確認是否有鎖好 \n3.Cooler fan connector確認有插好"
+            },
+            {
+                keywords: ["thermal test","流程"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["溫度測試","流程"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["測試","溫度","流程"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["測試","thermal","流程"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["thermal test","sop"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["溫度測試","sop"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["測試","溫度","sop"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["測試","thermal","sop"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["thermal test","要準備什麼"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["溫度測試","要準備什麼"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["theraml","測試溫度","注意什麼"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["theraml","溫度測試","注意什麼"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["theraml","測試溫度","需要注意"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["theraml","溫度測試","需要注意"],
+                answer: "Thermal profile pre-test大約流程如下，大約需要3~5天，如果系統有狀況，會需要延長。\n1.PM提供樣機給EE確認系統作業系統是否安裝，如果有風扇，那麼需要把BIOS的fan control選項打開。\n2.不能做過破壞性測試，最好是機構剛組裝好系統。\n3.Thermal拿到樣機後，會檢查系統狀況，安裝thermal test tool。\n4.跑full load 24小時確認系統穩定性，同時初步看一下系統大約溫度狀況。\n5.如果系統穩定，開始黏溫度線。\n6.開始排程thermal chamber高溫測試，目前五位工程師用一台chamber，需要排隊。\n7.測試完成，開始整理thermal profile pre-test report。"
+            },
+            {
+                keywords: ["thermal profile test","什麼"],
+                answer: "QA的thermal profile test跟thermal做的溫度測試相同，算是double check test，通常thermal測試pass後，QA測試應該也會pass。"
+            },
+            {
+                keywords: ["模擬", "流程"],
+                answer: "模擬需要資料如下，資料全部到齊確認OK後才能進行排程喔，模擬需要工作天數3~4天，依照系統複雜度不同。\n1.回填廢熱表(EE/Power)，如下載連結: <a href='https://docs.google.com/spreadsheets/d/1ZNCjw0w1ElHVHm2Zcb1UZNgbpNfouEvX/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>模擬廢熱表</a>\n2.廢熱表內零件datasheet(EE/Power)。\n3.廢熱表內零件位置圖(EE/Power)。\n4.系統3D X_T file，需要包含主要發熱零件(ME)。\n5.系統環境溫度規格與噪音規格(PM)。"
+            },
+            {
+                keywords: ["simulation", "流程"],
+                answer: "模擬需要資料如下，資料全部到齊確認OK後才能進行排程喔，模擬需要工作天數3~4天，依照系統複雜度不同。\n1.回填廢熱表(EE/Power)，如下載連結: <a href='https://docs.google.com/spreadsheets/d/1ZNCjw0w1ElHVHm2Zcb1UZNgbpNfouEvX/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>模擬廢熱表</a>\n2.廢熱表內零件datasheet(EE/Power)。\n3.廢熱表內零件位置圖(EE/Power)。\n4.系統3D X_T file，需要包含主要發熱零件(ME)。\n5.系統環境溫度規格與噪音規格(PM)。"
+            },
+            {
+                keywords: ["模擬", "sop"],
+                answer: "模擬需要資料如下，資料全部到齊確認OK後才能進行排程喔，模擬需要工作天數3~4天，依照系統複雜度不同。\n1.回填廢熱表(EE/Power)，如下載連結: <a href='https://docs.google.com/spreadsheets/d/1ZNCjw0w1ElHVHm2Zcb1UZNgbpNfouEvX/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>模擬廢熱表</a>\n2.廢熱表內零件datasheet(EE/Power)。\n3.廢熱表內零件位置圖(EE/Power)。\n4.系統3D X_T file，需要包含主要發熱零件(ME)。\n5.系統環境溫度規格與噪音規格(PM)。"
+            },
+            {
+                keywords: ["simulation", "sop"],
+                answer: "模擬需要資料如下，資料全部到齊確認OK後才能進行排程喔，模擬需要工作天數3~4天，依照系統複雜度不同。\n1.回填廢熱表(EE/Power)，如下載連結: <a href='https://docs.google.com/spreadsheets/d/1ZNCjw0w1ElHVHm2Zcb1UZNgbpNfouEvX/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>模擬廢熱表</a>\n2.廢熱表內零件datasheet(EE/Power)。\n3.廢熱表內零件位置圖(EE/Power)。\n4.系統3D X_T file，需要包含主要發熱零件(ME)。\n5.系統環境溫度規格與噪音規格(PM)。"
+            },
+            {
+                keywords: ["設計","heatsink","流程"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["設計","heat sink","流程"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["design","heatsink","流程"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["design","heat sink","流程"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["設計","heatsink","sop"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["設計","heat sink","sop"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["design","heatsink","sop"],
+                answer: "設計heat sink流程如下。\n1.確認零件放heat sink的限制區空間 \n2.依照對應零件廢熱，初步計算heat sink結構與材質 \n3.確認是否有適合可以用的既有料heat sink \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["設計","cooler","流程"],
+                answer: "設計cooler流程如下。\n1.確認零件放cooler的限制區空間 \n2.依照對應零件廢熱，初步計算cooler結構與材質 \n3.確認是否有適合可以用的既有料cooler \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["設計","cooler","sop"],
+                answer: "設計cooler流程如下。\n1.確認零件放cooler的限制區空間 \n2.依照對應零件廢熱，初步計算cooler結構與材質 \n3.確認是否有適合可以用的既有料cooler \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["design","cooler","流程"],
+                answer: "設計cooler流程如下。\n1.確認零件放cooler的限制區空間 \n2.依照對應零件廢熱，初步計算cooler結構與材質 \n3.確認是否有適合可以用的既有料cooler \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["design","cooler","sop"],
+                answer: "設計cooler流程如下。\n1.確認零件放cooler的限制區空間 \n2.依照對應零件廢熱，初步計算cooler結構與材質 \n3.確認是否有適合可以用的既有料cooler \n4.進行thermal simulation確認"
+            },
+            {
+                keywords: ["機殼大小","對","散熱","影響"],
+                answer: "固定系統瓦特數下，系統機殼越大，系統溫度越低。"
+            },
+            {
+                keywords: ["系統大小","對","散熱","影響"],
+                answer: "固定系統瓦特數下，系統機殼越大，系統溫度越低。"
+            },
+            {
+                keywords: ["機殼大小","對","溫度","影響"],
+                answer: "固定系統瓦特數下，系統機殼越大，系統溫度越低。"
+            },
+            {
+                keywords: ["系統大小","對","溫度","影響"],
+                answer: "固定系統瓦特數下，系統機殼越大，系統溫度越低。"
+            },
+            {
+                keywords: ["thermal pad","含金屬嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+            {
+                keywords: ["導熱片","含金屬嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+             {
+                keywords: ["散熱片","含金屬嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+            {
+                keywords: ["thermal pad","會導電嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+            {
+                keywords: ["導熱片","會導電嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+             {
+                keywords: ["散熱片","會導電嗎"],
+                answer: "thermal pad裡面不含純金屬，但有金屬化合物，譬如氧化鋁。\nthermal pad的datasheet裡通常有絕緣電阻值可以參考，會不會導電這問題，需要請EE比對伏特數與絕緣電阻值。"
+            },
+            {
+                keywords: ["emi shielding","對thermal","影響"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["emi shielding","對溫度","影響"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["shielding","對thermal","影響"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["shielding","對溫度","影響"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["emi shielding","會加強散熱"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["emi shielding","會讓","溫度比較好"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["shielding","會加強散熱"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["shielding","會讓","溫度比較好"],
+                answer: "EMI/ESD跟thermal通常是互相對立的，EMI/ESD的solution通常都不好散熱，零件溫度會上升。\n實務上，通常主板會先讓出shielding clip的限制空間，EMI/ESD/thermal在實測中看是否可以取得平衡點。"
+            },
+            {
+                keywords: ["thermal pad","可以","重複使用"],
+                answer: "幾種建議狀況如下。\n1.如果是要給客戶的樣機，千萬不能重複使用，一定要換新的。\n2.如果是要測試高溫，那麼也不能重複使用。\n3.如果是RD桌上測試debug，那麼可以不用更換 "
+            },
+            {
+                keywords: ["導熱片","可以","重複使用"],
+                answer: "幾種建議狀況如下。\n1.如果是要給客戶的樣機，千萬不能重複使用，一定要換新的。\n2.如果是要測試高溫，那麼也不能重複使用。\n3.如果是RD桌上測試debug，那麼可以不用更換 "
+            },
+            {
+                keywords: ["散熱片","可以","重複使用"],
+                answer: "幾種建議狀況如下。\n1.如果是要給客戶的樣機，千萬不能重複使用，一定要換新的。\n2.如果是要測試高溫，那麼也不能重複使用。\n3.如果是RD桌上測試debug，那麼可以不用更換 "
+            },
+            {
+                keywords: ["thermal pad","壓縮比","建議"],
+                answer: "實務上通常初步會先設定thermal pad壓縮比為30%，也就是1mm thermal pad壓到0.7mm厚度。\n比較精確評估的話，需要參考thermal pad datasheet。"
+            },
+            {
+                keywords: ["導熱片","壓縮比","建議"],
+                answer: "實務上通常初步會先設定thermal pad壓縮比為30%，也就是1mm thermal pad壓到0.7mm厚度。\n比較精確評估的話，需要參考thermal pad datasheet。"
+            },
+            {
+                keywords: ["散熱片","壓縮比","建議"],
+                answer: "實務上通常初步會先設定thermal pad壓縮比為30%，也就是1mm thermal pad壓到0.7mm厚度。\n比較精確評估的話，需要參考thermal pad datasheet。"
+            },
+            {
+                keywords: ["thermal pad","導熱係數範圍"],
+                answer: "研華常用料中，thermal pad導熱係數最低為1.2W/mK，最高約為13W/mK。"
+            },
+            {
+                keywords: ["導熱片","導熱係數範圍"],
+                answer: "研華常用料中，thermal pad導熱係數最低為1.2W/mK，最高約為13W/mK。"
+            },
+            {
+                keywords: ["散熱片","導熱係數範圍"],
+                answer: "研華常用料中，thermal pad導熱係數最低為1.2W/mK，最高約為13W/mK。"
+            },
+            {
+                keywords: ["thermal pad","建議厚度"],
+                answer: "Thermal pad的厚度越小越好，散熱效率比較好，建議實際壓縮後，厚度需小於0.8mm。\n這也需要考慮到公差是否OK。"
+            },
+            {
+                keywords: ["導熱片","建議厚度"],
+                answer: "Thermal pad的厚度越小越好，散熱效率比較好，建議實際壓縮後，厚度需小於0.8mm。\n這也需要考慮到公差是否OK。"
+            },
+             {
+                keywords: ["散熱片","建議厚度"],
+                answer: "Thermal pad的厚度越小越好，散熱效率比較好，建議實際壓縮後，厚度需小於0.8mm。\n這也需要考慮到公差是否OK。"
+            },
+            {
+                keywords: ["陽極處理","什麼顏色"],
+                answer: "研華常見顏色為黑色及金屬銀色，建議黑色比較好，可以加強輻射散熱。"
+            },
+            {
+                keywords: ["陽極處理","什麼好處"],
+                answer: "陽極處理是是一種電化學表面處理技術。透過施加電流，將金屬（最常見為鋁合金）作為陽極，使其表面生成一層緻密、堅硬的保護性氧化膜。\n有美觀作用且可以加強輻射散射效果。"
+            },
+            {
+                keywords: ["陽極處理","是什麼"],
+                answer: "陽極處理是是一種電化學表面處理技術。透過施加電流，將金屬（最常見為鋁合金）作為陽極，使其表面生成一層緻密、堅硬的保護性氧化膜。\n有美觀作用且可以加強輻射散射效果。"
+            },
+            {
+                keywords: ["陽極處理","什麼是"],
+                answer: "陽極處理是是一種電化學表面處理技術。透過施加電流，將金屬（最常見為鋁合金）作為陽極，使其表面生成一層緻密、堅硬的保護性氧化膜。\n有美觀作用且可以加強輻射散射效果。"
+            },
+            {
+                keywords: ["寄樣機","給客戶前","thermal","確認"],
+                answer: "寄樣機給客戶前需要確定幾件事。\n1.如果有風扇，那麼需要有初步常溫fan control table設計 \n2.EE需要確認系統是正常 \n3.themral掃一下常溫full load，看溫度是否正常 \n4.AE確認系統是否正常"
+            },
+            {
+                keywords: ["送樣機","給客戶前","thermal","確認"],
+                answer: "寄樣機給客戶前需要確定幾件事。\n1.如果有風扇，那麼需要有初步常溫fan control table設計 \n2.EE需要確認系統是正常 \n3.themral掃一下常溫full load，看溫度是否正常 \n4.AE確認系統是否正常"
+            },
             {
                 keywords: ["模擬","要幾天"],
                 answer: "一般跑模擬需要約3~4天，看系統的複雜度。\n目前五個工程師用兩套軟體，需要預約排隊。"
@@ -2025,7 +2445,7 @@
             // 查無資料時，寫入 Google 試算表
             submitToGoogleSheet(userText);
             
-            return `Sorry~ 小R目前無法回答這問題。\n不過別擔心，系統已經自動將沒被回覆的問題傳送給管理員藍迪。\n我們會盡速擴充資料庫，然後進版給你參考，謝拉！`;
+            return `Sorry~ 小R目前無法回答這問題，已傳送給藍迪彙整更新。\n如果是複雜評估計算問題，請直接找Thermal，3Q~`;
         }
 
         function appendMessage(text, sender) {
