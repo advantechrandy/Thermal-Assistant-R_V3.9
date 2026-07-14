@@ -6,7 +6,7 @@
     <title>Thermal Assistant 小R</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 更新2026/07/11 */
+        /* 更新2026/07/14-1 */
         :root {
             --bg-dark: #080d0a;
             --panel-bg: #0d1712;
@@ -278,6 +278,54 @@
             {
                 keywords: ["噪音","測試規範有哪些"],
                 answer: "Noise test規範主要有三種。\n1.sound pressure test，研華最常用的測試規範，因為風扇datasheet上面只有sound pressure數據，才有辦法初步評估。\n2.sound power。\n3.sound quality。"
+            },
+            {
+                keywords: ["heat sink","螺絲","鎖","順序"],
+                answer: "Heat sink螺絲鎖附的順序會是對角線交叉鎖，先預鎖再鎖到底。"
+            },
+            {
+                keywords: ["heatsink","螺絲","鎖","順序"],
+                answer: "Heat sink螺絲鎖附的順序會是對角線交叉鎖，先預鎖再鎖到底。"
+            },
+            {
+                keywords: ["cooler","螺絲","鎖","順序"],
+                answer: "cooler螺絲鎖附的順序會是對角線交叉鎖，先預鎖再鎖到底。"
+            },
+            {
+                keywords: ["彈簧螺絲","磅力","計算"],
+                answer: "Heat sink或cooler的彈簧螺絲磅力計算，會是由廠商設計。廠商出樣品前，需要實際測試磅力，並提供給Thermal。"
+            },
+            {
+                keywords: ["螺絲鎖附","力量","定義"],
+                answer: "研華產線有螺絲鎖附力量定義如下連結。\n<a href='https://docs.google.com/presentation/d/1YyybtX9BxiIaq2spBLKahTFiogOC_hMY/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>研華產線螺絲鎖附定義</a>"
+            },
+            {
+                keywords: ["螺絲","鎖","力","怎麼"],
+                answer: "研華產線有螺絲鎖附力量定義如下連結。\n<a href='https://docs.google.com/presentation/d/1YyybtX9BxiIaq2spBLKahTFiogOC_hMY/edit?usp=drive_link&ouid=114028389622768722194&rtpof=true&sd=true' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>研華產線螺絲鎖附定義</a>"
+            },
+            {
+                keywords: ["超流體","散熱","什麼是"],
+                answer: "微流道水冷板中，流體跟水道牆會有摩擦阻抗，讓流阻上升，流量變小。\n如果加入微小氣泡，這摩擦阻抗會下降，讓流量變大。\n說明連結: <a href='https://advantechrandy.github.io/Data-B020_V1.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>超流體散熱說明</a>"
+            },
+            {
+                keywords: ["超流體","散熱","是什麼"],
+                answer: "微流道水冷板中，流體跟水道牆會有摩擦阻抗，讓流阻上升，流量變小。\n如果加入微小氣泡，這摩擦阻抗會下降，讓流量變大。\n說明連結: <a href='https://advantechrandy.github.io/Data-B020_V1.3/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>超流體散熱說明</a>"
+            },
+            {
+                keywords: ["風扇失速","什麼是"],
+                answer: "如果風阻太高，背壓太大，轉速會拉高，噪音上升，但流量變小。\n說明連結: <a href='https://advantechrandy.github.io/Data-B015_V1.4/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>風扇失速說明</a>"
+            },
+            {
+                keywords: ["風扇失速","是什麼"],
+                answer: "如果風阻太高，背壓太大，轉速會拉高，噪音上升，但流量變小。\n說明連結: <a href='https://advantechrandy.github.io/Data-B015_V1.4/' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>風扇失速說明</a>"
+            },
+            {
+                keywords: ["開孔率","怎麼計算"],
+                answer: "請參考下面連結，各種開孔型式開孔率計算。\n<a href='https://www.hohsin.tw/tw/count.asp' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>開孔率計算連結</a>"
+            },
+            {
+                keywords: ["開孔率","如何計算"],
+                answer: "請參考下面連結，各種開孔型式開孔率計算。\n<a href='https://www.hohsin.tw/tw/count.asp' target='_blank' class='text-[var(--accent-orange)] underline hover:text-white transition-colors'>開孔率計算連結</a>"
             },
             {
                 keywords: ["heat sink","鰭片","怎麼","最佳化"],
